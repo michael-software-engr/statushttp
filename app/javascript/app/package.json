@@ -1,0 +1,46 @@
+{
+  "name": "app",
+  "proxy": "http://localhost:8080",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-fetch": "^3.0.4",
+    "humps": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "semantic-ui-react": "^0.88.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "deploy": "yarn deploy-msg && yarn build && yarn deploy-clean-dest && yarn deploy-cp-to-dest",
+    "build": "react-scripts build",
+    "deploy-env-backend-dir": "../../../public",
+    "deploy-msg": "echo \"... building prod and deploying to '$npm_package_scripts_deploy_env_backend_dir'\"...",
+    "deploy-clean-dest": "/bin/rm -vrf \"$npm_package_scripts_deploy_env_backend_dir\"",
+    "deploy-cp-to-dest": "/bin/cp -rf ./build \"$npm_package_scripts_deploy_env_backend_dir\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1"
+  }
+}
